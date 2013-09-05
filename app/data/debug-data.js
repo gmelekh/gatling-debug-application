@@ -1,7 +1,7 @@
 var debugData = [
   {
     name: 'getLogin',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174135666,
     requestEndDate: 1377174135666,
     responseStartDate: 1377174135975,
@@ -9,7 +9,7 @@ var debugData = [
   },
   {
     name: 'postLogin',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136092,
     requestEndDate: 1377174136092,
     responseStartDate: 1377174136107,
@@ -17,7 +17,7 @@ var debugData = [
   },
   {
     name: 'postLogin Redirect 1',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136109,
     requestEndDate: 1377174136109,
     responseStartDate: 1377174136238,
@@ -25,7 +25,7 @@ var debugData = [
   },
   {
     name: 'postLogin Redirect 2',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136239,
     requestEndDate: 1377174136239,
     responseStartDate: 1377174136246,
@@ -33,7 +33,7 @@ var debugData = [
   },
   {
     name: 'nonAckMessages',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136335,
     requestEndDate: 1377174136335,
     responseStartDate: 1377174136352,
@@ -41,7 +41,7 @@ var debugData = [
   },
   {
     name: 'learnerEvalForNow',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136354,
     requestEndDate: 1377174136354,
     responseStartDate: 1377174136384,
@@ -49,7 +49,7 @@ var debugData = [
   },
   {
     name: 'trainees',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136388,
     requestEndDate: 1377174136388,
     responseStartDate: 1377174136521,
@@ -57,7 +57,7 @@ var debugData = [
   },
   {
     name: 'date',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136602,
     requestEndDate: 1377174136602,
     responseStartDate: 1377174136618,
@@ -65,7 +65,7 @@ var debugData = [
   },
   {
     name: 'avatar',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136619,
     requestEndDate: 1377174136619,
     responseStartDate: 1377174136641,
@@ -73,7 +73,7 @@ var debugData = [
   },
   {
     name: 'retrieve',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136645,
     requestEndDate: 1377174136645,
     responseStartDate: 1377174136659,
@@ -81,7 +81,7 @@ var debugData = [
   },
   {
     name: 'delete',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136675,
     requestEndDate: 1377174136675,
     responseStartDate: 1377174136693,
@@ -89,7 +89,7 @@ var debugData = [
   },
   {
     name: 'retrieve',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136695,
     requestEndDate: 1377174136695,
     responseStartDate: 1377174136722,
@@ -97,7 +97,7 @@ var debugData = [
   },
   {
     name: 'delete',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136723,
     requestEndDate: 1377174136723,
     responseStartDate: 1377174136738,
@@ -105,7 +105,7 @@ var debugData = [
   },
   {
     name: 'retrieve',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136740,
     requestEndDate: 1377174136740,
     responseStartDate: 1377174136765,
@@ -113,14 +113,14 @@ var debugData = [
   },
   {
     name: 'delete',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136767,
     requestEndDate: 1377174136767,
     responseStartDate: 1377174136782,
     responseEndDate: 1377174136782
   },
   {
-    type: "Query",
+    type: 'Query',
     name: 'retrieve',
     requestStartDate: 1377174136784,
     requestEndDate: 1377174136784,
@@ -129,7 +129,7 @@ var debugData = [
   },
   {
     name: 'delete',
-    type: "Query",
+    type: 'Query',
     requestStartDate: 1377174136817,
     requestEndDate: 1377174136817,
     responseStartDate: 1377174136836,
