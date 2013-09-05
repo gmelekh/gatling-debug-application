@@ -15,7 +15,6 @@ var gatling = gatling || {};
       responseEndDate: 0
     },
 
-    // TODO Find a better way
     computed: [
       'responseTime',
       'startDeltaTime',

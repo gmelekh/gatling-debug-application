@@ -6,22 +6,48 @@ body {
   margin-top: 60px;
 }
 
-// TODO Facto/separate this shit
+.col-name {
+  width: 150px;
+}
+
+.col-duration {
+  width: 70px;
+}
+
+.col-start,
+.col-end {
+  width: 100px;
+}
 
 .table {
   &> thead > tr > th {
     vertical-align: top;
   }
+}
 
-  &> thead, &> tbody {
+.table {
+  &> thead,
+  &> tbody {
     &> tr {
-      &> th:first-child, &> td:first-child {
+      &> th:first-child,
+      &> td:first-child {
         border-left: none;
       }
 
-      &> th, &> td {
+      &> th,
+      &> td {
         border-left: 1px solid #ddd;
+      }
+    }
+  }
+}
 
+.table {
+  &> thead,
+  &> tbody {
+    &> tr {
+      &> th,
+      &> td {
         span {
           color: #aaa;
           display: block;
