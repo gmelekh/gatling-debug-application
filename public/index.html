@@ -12,29 +12,24 @@
   <!-- Application -->
 
   <link rel="stylesheet" href="../app/css/main.css">
-  <!--<link rel="stylesheet" href="../app/css/sort-column.css">-->
-
-  <!-- Templates -->
-
-  <script>
-  </script>
+  <link rel="stylesheet" href="../app/css/sort.css">
 </head>
 <body>
 
 <div class="container">
 
-  <table id="timeline" class="table table-condensed table-striped">
-    <thead>
-    <tr>
-      <th class="col-name">Name<span>Type</span></th>
-      <th class="col-duration">Duration</th>
-      <th class="col-start sortColumnAsc">Start<span>Start date</span></th>
-      <th class="col-end">End<span>End date</span></th>
-      <th class="col-timeline">Timeline</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div id="timeline">
+    <div class="timeline-header">
+      <div class="timeline-row">
+        <div class="timeline-col-4">Name<span>Type</span></div><!--
+        --><div class="timeline-col-2">Duration</div><!--
+        --><div class="timeline-col-3 sortColumnAsc">Start<span>Start date</span></div><!--
+        --><div class="timeline-col-3">End<span>End date</span></div><!--
+        --><div class="timeline-col-12">Timeline</div>
+      </div>
+    </div>
+    <div class="timeline-body"></div>
+  </div>
 </div>
 
 <!-- Dependencies -->
@@ -53,8 +48,9 @@
 
 <!-- Application -->
 
-<!-- Data & Tools -->
+<!-- Data -->
 <script type="text/javascript" src="../app/data/debug-data.js"></script>
+<!-- Bootstrapping -->
 <script type="text/javascript" src="../app/js/bootstrap.js"></script>
 <!-- Models -->
 <script type="text/javascript" src="../app/js/models/exec.js"></script>
@@ -67,6 +63,5 @@
 <script type="text/javascript" src="../app/js/views/app.js"></script>
 <!-- App -->
 <script type="text/javascript" src="../app/js/application.js"></script>
-
 </body>
 </html>

@@ -6,12 +6,17 @@ var gatling = gatling || {};
 
   gatling.View.Exec = Backbone.View.extend({
 
-    tagName: 'tr',
+    tagName: 'div',
+    className: 'timeline-row',
 
     template: _.template(gatling.Template.Exec),
 
     events: {
-      'click .exec': 'printInfo'
+      'click .exec': 'subtractSmallAmount'
+    },
+
+    initialize: function () {
+      this.listenTo(this.model, 'change', this.printInfo);
     },
 
     render: function () {
@@ -20,8 +25,12 @@ var gatling = gatling || {};
       return this;
     },
 
+    subtractSmallAmount: function () {
+      this.model.subtractSmallAmount();
+    },
+
     printInfo: function () {
-      alert('clicked!');
+      this.render();
     }
   });
 }(jQuery));

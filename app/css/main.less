@@ -6,85 +6,139 @@ body {
   margin-top: 60px;
 }
 
-.col-name {
-  min-width: 150px;
+.container {
+  max-width: 960px;
+  padding: 0;
 }
 
-.col-duration {
-  min-width: 70px;
+.timeline-header {
+  font-weight: bold;
 }
 
-.col-start,
-.col-end {
-  min-width: 100px;
-}
+.timeline-header,
+.timeline-body {
+  .timeline-row {
+    &> div {
+      vertical-align: top;
+      display: inline-block;
+    }
 
-.table {
-  &> thead > tr > th {
-    vertical-align: top;
+    span {
+      color: #aaa;
+      display: block;
+      font-size: 90%;
+      font-weight: normal;
+    }
   }
 }
 
-.table {
-  &> thead,
-  &> tbody {
-    &> tr {
-      &> th:first-child,
-      &> td:first-child {
-        border-left: none;
-      }
+.timeline-body {
+  .timeline-row {
+    height: 24px;
 
-      &> th,
-      &> td {
-        border-left: 1px solid #ddd;
+    span {
+      display: none;
+    }
+
+    &:hover {
+      height: 32px;
+
+      span {
+        display: block;
       }
     }
   }
 }
 
-.table {
-  &> thead,
-  &> tbody {
-    &> tr {
-      &> th,
-      &> td {
-        span {
-          color: #aaa;
-          display: block;
-          font-size: 90%;
-        }
-      }
+@base: 30px;
+@gutter: 5px;
 
-      &> th span {
-        font-weight: normal;
-      }
-
-      &> td span {
-        display: none;
-      }
-
-      &:hover {
-        span {
-          display: block;
-        }
-      }
-    }
-  }
+.timeline-col-gutter() {
+  margin: @gutter @gutter 0 @gutter;
 }
 
-#timeline .timelined {
+.timeline-col-width(@num) {
+  width: ((@base + @gutter * 2) * @num) - @gutter * 2;
+}
+
+.timeline-col-1,
+.timeline-col-2,
+.timeline-col-3,
+.timeline-col-4,
+.timeline-col-5,
+.timeline-col-6,
+.timeline-col-7,
+.timeline-col-8,
+.timeline-col-9,
+.timeline-col-10,
+.timeline-col-11,
+.timeline-col-12 {
+  .timeline-col-gutter();
+
+  overflow: hidden;
+}
+
+.timeline-col-1 {
+  .timeline-col-width(1);
+}
+
+.timeline-col-2 {
+  .timeline-col-width(2);
+}
+
+.timeline-col-3 {
+  .timeline-col-width(3);
+}
+
+.timeline-col-4 {
+  .timeline-col-width(4);
+}
+
+.timeline-col-5 {
+  .timeline-col-width(5);
+}
+
+.timeline-col-6 {
+  .timeline-col-width(6);
+}
+
+.timeline-col-7 {
+  .timeline-col-width(7);
+}
+
+.timeline-col-8 {
+  .timeline-col-width(8);
+}
+
+.timeline-col-9 {
+  .timeline-col-width(9);
+}
+
+.timeline-col-10 {
+  .timeline-col-width(10);
+}
+
+.timeline-co1-11 {
+  .timeline-col-width(11);
+}
+
+.timeline-co1-12 {
+  .timeline-col-width(12);
+}
+
+#timeline .exec div {
   display: inline-block;
   height: 10px;
+
+  &+ span {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: bottom;
+  }
 
   &:hover {
     cursor: pointer;
   }
-}
-
-#timeline .timelined + span {
-  display: inline-block;
-  margin-left: 10px;
-  vertical-align: bottom;
 }
 
 .exec-styles(@btn-color: #555) {
@@ -110,7 +164,7 @@ body {
   border-radius: @radius;
 }
 
-.exec {
+.exec div {
   .exec-borders();
   .exec-styles(@btn-success-bg);
 }

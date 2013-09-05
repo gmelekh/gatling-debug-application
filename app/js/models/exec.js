@@ -25,6 +25,13 @@ var gatling = gatling || {};
       'width'
     ],
 
+    subtractSmallAmount: function () {
+      this.set({
+        responseStartDate: this.get('responseStartDate') - 10,
+        responseEndDate: this.get('responseEndDate') - 10
+      });
+    },
+
     responseTime: function () {
       return this.get('responseEndDate') - this.get('requestStartDate');
     },
