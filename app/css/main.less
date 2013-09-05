@@ -1,6 +1,5 @@
 @import "variables.less";
 @import "mixins.less";
-
 @import "grid.less";
 
 body {
@@ -9,7 +8,7 @@ body {
 }
 
 .container {
-//  .grid-24();
+  //  .grid-24();
   max-width: 960px;
   padding: 0;
 }
@@ -77,8 +76,6 @@ body {
 .timeline-col-11,
 .timeline-col-12 {
   .timeline-col-gutter();
-
-  overflow: hidden;
 }
 
 .timeline-col-1 {
@@ -165,6 +162,12 @@ body {
 .exec-borders(@width: 1px, @radius: 2px) {
   border: @width solid transparent;
   border-radius: @radius;
+}
+
+.exec {
+  overflow: hidden;
+  white-space: nowrap;
+  .timeline-col-width(12);
 }
 
 .exec div {
