@@ -14,7 +14,7 @@ $ npm install -g bower
 
 ## Testing
 
-You can start karma file watch this way:
+You can start [Karma](http://karma-runner.github.io/)'s file watch this way:
 
 ```bash
 $ npm install -g karma jasmine-node
