@@ -22,13 +22,11 @@ var gatling = gatling || {};
     toComputedJSON: function () {
       var json = this.toJSON();
 
-      var that = this;
-
       _.each(this.computed, function (key) {
-        if (_.isFunction(that[key])) {
-          json[key] = that[key](that);
+        if (_.isFunction(this[key])) {
+          json[key] = this[key]();
         }
-      });
+      }, this);
 
       return json;
     }
