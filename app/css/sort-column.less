@@ -1,0 +1,16 @@
+.table {
+  &> thead {
+    &> tr {
+      &> th {
+        cursor: pointer;
+        min-width: 80px;
+      }
+      &> th.sortColumnAsc {
+        background: url('../images/asc2.gif') no-repeat right 8px;
+      }
+      &> th.sortColumnDesc {
+        background: url('../images/desc2.gif') no-repeat right 12px;
+      }
+    }
+  }
+}

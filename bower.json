@@ -1,0 +1,12 @@
+{
+  "name": "gatling-debug-charts",
+  "version": "0.1",
+  "dependencies": {
+    "jasmine-jstd-adapter": "~1.1.2",
+    "jquery": "~1.10.2",
+    "jquery.formatDateTime": "~1.0.9",
+    "bootstrap": "~3.0.0",
+    "underscore": "~1.5.1",
+    "backbone": "~1.0.0"
+  }
+}

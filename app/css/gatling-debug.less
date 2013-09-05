@@ -1,0 +1,90 @@
+@import "variables.less";
+@import "mixins.less";
+
+body {
+  font-size: 12px;
+  margin-top: 60px;
+}
+
+// TODO Facto/separate this shit
+
+.table {
+  &> thead > tr > th {
+    vertical-align: top;
+  }
+
+  &> thead, &> tbody {
+    &> tr {
+      &> th:first-child, &> td:first-child {
+        border-left: none;
+      }
+
+      &> th, &> td {
+        border-left: 1px solid #ddd;
+
+        span {
+          color: #aaa;
+          display: block;
+          font-size: 90%;
+        }
+      }
+
+      &> th span {
+        font-weight: normal;
+      }
+
+      &> td span {
+        display: none;
+      }
+
+      &:hover {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+#timeline .timelined {
+  display: inline-block;
+  height: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#timeline .timelined + span {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: bottom;
+}
+
+.exec-styles(@btn-color: #555) {
+  #gradient > .vertical(@start-color: @btn-color, @end-color: darken(@btn-color, 12%));
+  background-repeat: repeat-x;
+  border-color: darken(@btn-color, 14%);
+
+  &:hover,
+  &:focus {
+    background-color: darken(@btn-color, 12%);
+    background-position: 0 -15px;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken(@btn-color, 12%);
+    border-color: darken(@btn-color, 14%);
+  }
+}
+
+.exec-borders(@width: 1px, @radius: 2px) {
+  border: @width solid transparent;
+  border-radius: @radius;
+}
+
+.exec {
+  .exec-borders();
+  .exec-styles(@btn-success-bg);
+}
