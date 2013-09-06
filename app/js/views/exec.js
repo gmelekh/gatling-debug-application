@@ -6,8 +6,7 @@ var gatling = gatling || {};
 
   gatling.View.Exec = Backbone.View.extend({
 
-    tagName: 'div',
-    className: 'timeline-row',
+    tagName: 'tr',
 
     template: _.template(gatling.Template.Exec),
 

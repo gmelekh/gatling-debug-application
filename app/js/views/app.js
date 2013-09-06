@@ -17,7 +17,7 @@ var gatling = gatling || {};
 
     addOne: function (exec) {
       var view = new gatling.View.Exec({ model: exec });
-      this.$timeline.children('.timeline-body').append(view.render().el);
+      this.$timeline.children('tbody').append(view.render().el);
     }
   });
 }(jQuery));

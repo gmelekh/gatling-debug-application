@@ -1,16 +1,14 @@
 #timeline {
-  &> .timeline-header {
-    &> .timeline-row {
-      &> div {
-        cursor: pointer;
+  thead {
+    th {
+      cursor: pointer;
+
+      &.sortColumnAsc {
+        background: url('../images/asc2.gif') no-repeat right 8px;
       }
 
-      &> div.sortColumnAsc {
-        background: url('../images/asc2.gif') no-repeat right 4px;
-      }
-
-      &> div.sortColumnDesc {
-        background: url('../images/desc2.gif') no-repeat right 8px;
+      &.sortColumnDesc {
+        background: url('../images/desc2.gif') no-repeat right 12px;
       }
     }
   }
