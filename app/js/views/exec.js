@@ -8,7 +8,7 @@ var gatling = gatling || {};
 
     tagName: 'tr',
 
-    template: _.template(gatling.Template.Exec),
+    template: _.template($('#exec-template').html()),
 
     events: {
       'click .exec': 'subtractSmallAmount'
