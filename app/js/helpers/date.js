@@ -10,7 +10,7 @@ var gatling = gatling || {};
     };
 
     this.toString = function () {
-      return $.formatDateTime('gg:ii:ss.uu', new Date(timestamp));
+      return $.formatDateTime('g:ii:ss.uu', new Date(timestamp));
     };
   };
 }(jQuery));

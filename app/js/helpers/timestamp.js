@@ -24,10 +24,10 @@ var gatling = gatling || {};
 
       var hours = Math.floor(minutes / 60);
       if (hours === 0) {
-        return $.formatDateTime('i:ss.uu', date);
+        return $.formatDateTime('i:ss.uu', date) + ' m';
       }
 
-      return $.formatDateTime('gg:ii:ss.uu', date);
+      return $.formatDateTime('g:ii:ss.uu', date);
     };
   };
 }(jQuery));
