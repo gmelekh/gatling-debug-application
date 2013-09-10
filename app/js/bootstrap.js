@@ -6,8 +6,6 @@ var gatling = gatling || {};
 
   // Underscore.js configuration
 
-  // Mustache like interpolation pattern
-  _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
   // Skip scope resolution
   _.templateSettings.variable = 'exec';
 
