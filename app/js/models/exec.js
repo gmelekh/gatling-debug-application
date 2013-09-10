@@ -33,31 +33,31 @@ var gatling = gatling || {};
     },
 
     responseTime: function () {
-      return this.get('responseEndDate') - this.get('requestStartDate');
+      return new gatling.Timestamp(this.get('responseEndDate') - this.get('requestStartDate'));
     },
 
     startDeltaTime: function () {
-      return this.get('requestStartDate') - debugData[0].requestStartDate;
+      return new gatling.Timestamp(this.get('requestStartDate') - debugData[0].requestStartDate);
     },
 
     startTimestamp: function () {
-      return $.formatDateTime('gg:ii:ss.uu', new Date(this.get('requestStartDate')));
+      return new gatling.Date(this.get('requestStartDate'));
     },
 
     endDeltaTime: function () {
-      return this.get('responseEndDate') - debugData[0].requestStartDate;
+      return new gatling.Timestamp(this.get('responseEndDate') - debugData[0].requestStartDate);
     },
 
     endTimestamp: function () {
-      return $.formatDateTime('gg:ii:ss.uu', new Date(this.get('responseEndDate')));
+      return new gatling.Date(this.get('responseEndDate'));
     },
 
     margin: function () {
-      return this.startDeltaTime() * 0.5;
+      return this.startDeltaTime().getTime() * 0.5;
     },
 
     width: function () {
-      return this.responseTime() * 0.5;
+      return this.responseTime().getTime() * 0.5;
     }
   });
 }(jQuery));
