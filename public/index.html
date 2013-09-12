@@ -61,13 +61,13 @@
 <script type="text/javascript" src="../app/js/models/query.js"></script>
 <!-- Templates -->
 <script id="exec-template" type="text/template">
-  <td>{{ exec.name }}<span>{{ exec.type }}</span></td>
-  <td>{{ exec.responseTime }}</td>
-  <td>{{ exec.startDeltaTime }}<span>{{ exec.startTimestamp }}</span></td>
-  <td>{{ exec.endDeltaTime }}<span>{{ exec.endTimestamp }}</span></td>
+  <td><%= exec.name %><span><%= exec.type %></span></td>
+  <td><%= exec.responseTime %></td>
+  <td><%= exec.startDeltaTime %><span><%= exec.startTimestamp %></span></td>
+  <td><%= exec.endDeltaTime %><span><%= exec.endTimestamp %></span></td>
   <td class="exec">
-    <div style="margin-left: {{ exec.margin }}px; width: {{ exec.width }}px;"></div>
-    <span>{{ exec.responseTime }}</span>
+    <div style="margin-left: <%= exec.margin %>px; width: <%= exec.width %>px;"></div>
+    <span><%= exec.responseTime %></span>
   </td>
 </script>
 <!-- Views -->
