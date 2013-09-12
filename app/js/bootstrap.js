@@ -2,4 +2,4 @@
 
 'use strict';
 
-var gatling = angular.module('GatlingDebug', [], angular.noop);
+var gatling = angular.module('GatlingDebug', []);
