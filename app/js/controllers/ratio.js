@@ -4,7 +4,7 @@
 
 gatling.controller('ratioController', function ($rootScope) {
   var start = debugData[0].requestStartDate,
-    end = debugData[debugData.length - 1].responseStartDate;
+    end = debugData[debugData.length - 1].responseEndDate;
 
   // TODO magic value: timeline-col-14 width without margin,
   // plus supposed following span length
