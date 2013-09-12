@@ -10,22 +10,19 @@ module.exports = function (config) {
 
     files: [
       // vendor
-      'bower_components/jquery/jquery.js',
-      'bower_components/jquery.formatDateTime/dist/jquery.formatDateTime.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/underscore/underscore.js',
-      'bower_components/backbone/backbone.js',
+      'bower_components/jquery/jquery.min.js',
+      'bower_components/bootstrap/dist/js/bootstrap.min.js',
+      'bower_components/angular/angular.min.js',
       // simulation data
       'app/data/debug-data.js',
       // application bootstrap
       'app/js/bootstrap.js',
-      // assets
-      'app/js/models/*.js',
-      'app/js/collections/*.js',
-      'app/js/templates/*.js',
-      'app/js/views/*.js',
-      //'app/js/routers/*.js',
-      'app/js/application.js',
+      // javascripts
+      'app/js/filters/*.js',
+      'app/js/factories/*.js',
+      'app/js/controllers/*.js',
+      // html
+      'public/index.html',
       // tests
       'test/**/*.spec.js'
     ],

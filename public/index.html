@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="GatlingDebug">
 <head>
   <meta charset="utf-8">
   <title>Gatling Debug Timeline</title>
@@ -20,7 +20,12 @@
 
 <div class="container">
 
-  <table id="timeline" class="table table-condensed table-striped">
+  <div ng-controller="ratioController">
+    <button class="btn btn-sm btn-success" ng-click="increase()"><i class="glyphicon-plus"></i> Ratio</button>
+    <button class="btn btn-sm btn-default" ng-click="decrement()"><i class="glyphicon-minus"></i> Ratio</button>
+  </div>
+
+  <table id="timeline" class="table table-condensed table-striped" ng-controller="timelineController">
     <thead>
     <tr>
       <th class="timeline-col-4">Name<span>Type</span></th>
@@ -30,23 +35,32 @@
       <th class="timeline-col-14">Timeline</th>
     </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+    <tr ng-repeat="exec in execs">
+      <td>{{ exec.name }}<span>{{ exec.type }}</span></td>
+      <td>{{ exec.responseTime() | gatlingTimestamp }}</td>
+      <td>
+        {{ exec.startDeltaTime() | gatlingTimestamp }}
+        <span>{{ exec.requestStartDate | gatlingDate }}</span>
+      </td>
+      <td>
+        {{ exec.endDeltaTime() | gatlingTimestamp }}
+        <span>{{ exec.responseEndDate | gatlingDate }}</span>
+      </td>
+      <td class="exec">
+        <div style="margin-left: {{ exec.position() }}px; width: {{ exec.size() }}px;"></div>
+        <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
+      </td>
+    </tr>
+    </tbody>
   </table>
 </div>
 
 <!-- Dependencies -->
 
-<!-- jQuery -->
 <script type="text/javascript" src="../bower_components/jquery/jquery.min.js"></script>
-<script type="text/javascript"
-        src="../bower_components/jquery.formatDateTime/dist/jquery.formatDateTime.min.js"></script>
-
-<!-- Bootstrap -->
 <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Backbone -->
-<script type="text/javascript" src="../bower_components/underscore/underscore-min.js"></script>
-<script type="text/javascript" src="../bower_components/backbone/backbone-min.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
 
 <!-- Application -->
 
@@ -54,26 +68,14 @@
 <script type="text/javascript" src="../app/data/debug-data.js"></script>
 <!-- Bootstrapping -->
 <script type="text/javascript" src="../app/js/bootstrap.js"></script>
-<script type="text/javascript" src="../app/js/helpers/date.js"></script>
-<script type="text/javascript" src="../app/js/helpers/timestamp.js"></script>
-<!-- Models -->
-<script type="text/javascript" src="../app/js/models/exec.js"></script>
-<script type="text/javascript" src="../app/js/models/query.js"></script>
-<!-- Templates -->
-<script id="exec-template" type="text/template">
-  <td><%= exec.name %><span><%= exec.type %></span></td>
-  <td><%= exec.responseTime %></td>
-  <td><%= exec.startDeltaTime %><span><%= exec.startTimestamp %></span></td>
-  <td><%= exec.endDeltaTime %><span><%= exec.endTimestamp %></span></td>
-  <td class="exec">
-    <div style="margin-left: <%= exec.margin %>px; width: <%= exec.width %>px;"></div>
-    <span><%= exec.responseTime %></span>
-  </td>
-</script>
-<!-- Views -->
-<script type="text/javascript" src="../app/js/views/exec.js"></script>
-<script type="text/javascript" src="../app/js/views/application.js"></script>
-<!-- App -->
-<script type="text/javascript" src="../app/js/application.js"></script>
+<!-- Filters -->
+<script type="text/javascript" src="../app/js/filters/date.js"></script>
+<script type="text/javascript" src="../app/js/filters/timestamp.js"></script>
+<!-- Factories -->
+<script type="text/javascript" src="../app/js/factories/exec.js"></script>
+<!-- Controllers -->
+<script type="text/javascript" src="../app/js/controllers/ratio.js"></script>
+<script type="text/javascript" src="../app/js/controllers/timeline.js"></script>
+
 </body>
 </html>
