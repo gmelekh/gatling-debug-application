@@ -63,7 +63,7 @@
         <span>{{ exec.responseEndDate | gatlingDate }}</span>
       </td>
       <td class="exec">
-        <div style="margin-left: {{ exec.position() }}px; width: {{ exec.size() }}px;"></div>
+        <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.size() + 'px'}"></div>
         <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
       </td>
     </tr>
