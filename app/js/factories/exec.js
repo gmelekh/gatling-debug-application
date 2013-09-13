@@ -21,7 +21,7 @@ gatling.factory('Exec', function ($rootScope) {
       },
 
       position: function () {
-        return this.startDeltaTime() * $rootScope.ratio;
+        return (this.requestStartDate - $rootScope.position) * $rootScope.ratio;
       },
 
       size: function () {

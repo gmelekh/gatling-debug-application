@@ -9,4 +9,5 @@ gatling.controller('timelineController', function ($rootScope, $scope, Exec) {
   }, $scope.execs);
 
   $rootScope.simulationStart = debugData[0].requestStartDate;
+  $rootScope.position = $rootScope.simulationStart;
 });

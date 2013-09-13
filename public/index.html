@@ -7,7 +7,7 @@
   <!-- Dependencies -->
 
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <!--<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">-->
 
   <!-- Application -->
 
@@ -20,7 +20,25 @@
 
 <div class="container">
 
-  <div ng-controller="ratioController"></div>
+  <div ng-controller="positionController" class="text-right">
+    <h4>Position:</h4>
+
+    <div>
+      <button type="button" class="btn btn-xs btn-default" ng-click="increase()">Shift right</button>
+      <button type="button" class="btn btn-xs btn-default" ng-click="decrease()">Shift left</button>
+      <button type="button" class="btn btn-xs btn-primary" ng-click="reset()">Reset</button>
+    </div>
+  </div>
+
+  <div ng-controller="ratioController" class="text-right">
+    <h4>Ratio:</h4>
+
+    <div>
+      <button type="button" class="btn btn-xs btn-default" ng-click="increase()">Increase</button>
+      <button type="button" class="btn btn-xs btn-default" ng-click="decrease()">Decrease</button>
+      <button type="button" class="btn btn-xs btn-primary" ng-click="reset()">Reset</button>
+    </div>
+  </div>
 
   <table id="timeline" class="table table-condensed table-striped" ng-controller="timelineController">
     <thead>
@@ -71,6 +89,7 @@
 <!-- Factories -->
 <script type="text/javascript" src="../app/js/factories/exec.js"></script>
 <!-- Controllers -->
+<script type="text/javascript" src="../app/js/controllers/position.js"></script>
 <script type="text/javascript" src="../app/js/controllers/ratio.js"></script>
 <script type="text/javascript" src="../app/js/controllers/timeline.js"></script>
 
