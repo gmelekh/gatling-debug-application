@@ -3,6 +3,7 @@
 'use strict';
 
 gatling.controller('ratioController', function ($rootScope, $scope) {
+
   var start = debugData[0].requestStartDate,
     end = debugData[debugData.length - 1].responseEndDate;
 

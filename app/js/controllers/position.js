@@ -3,6 +3,7 @@
 'use strict';
 
 gatling.controller('positionController', function ($rootScope, $scope) {
+
   $scope.increase = function () {
     $rootScope.position += 50;
   };
