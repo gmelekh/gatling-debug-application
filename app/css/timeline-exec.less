@@ -2,26 +2,28 @@
 @import 'bootstrap/mixins';
 @import 'mixins.less';
 
-#timeline {
-  tbody {
-    .exec {
-      overflow: hidden;
-      white-space: nowrap;
+.timeline {
+  .timeline-body {
+    .timeline-row {
+      .timeline-exec {
+        overflow: hidden;
+        white-space: nowrap;
 
-      &> div {
-        .exec-borders();
-        .exec-styles(@btn-success-bg);
-        display: inline-block;
-        height: 10px;
-
-        &+ span {
+        &> div {
+          .exec-borders();
+          .exec-styles(@btn-success-bg);
           display: inline-block;
-          margin-left: 10px;
-          vertical-align: top;
-        }
+          height: 10px;
 
-        &:hover {
-          cursor: pointer;
+          &+ span {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: top;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

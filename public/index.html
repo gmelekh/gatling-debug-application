@@ -40,35 +40,35 @@
     </div>
   </div>
 
-  <table id="timeline" class="table table-condensed table-striped" ng-controller="timelineController">
-    <thead>
-    <tr>
-      <th class="timeline-col-4">Name<span>Type</span></th>
-      <th class="timeline-col-2">Duration</th>
-      <th class="timeline-col-2 sortColumnAsc">Start<span>Start date</span></th>
-      <th class="timeline-col-2">End<span>End date</span></th>
-      <th class="timeline-col-14">Timeline</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="exec in execs">
-      <td>{{ exec.name }}<span>{{ exec.type }}</span></td>
-      <td>{{ exec.responseTime() | gatlingTimestamp }}</td>
-      <td>
-        {{ exec.startDeltaTime() | gatlingTimestamp }}
-        <span>{{ exec.requestStartDate | gatlingDate }}</span>
-      </td>
-      <td>
-        {{ exec.endDeltaTime() | gatlingTimestamp }}
-        <span>{{ exec.responseEndDate | gatlingDate }}</span>
-      </td>
-      <td class="exec">
-        <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.size() + 'px'}"></div>
-        <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="timeline" ng-controller="timelineController">
+    <div class="timeline-head">
+      <div class="timeline-row">
+        <div class="timeline-header timeline-col-4">Name<span>Type</span></div>
+        <div class="timeline-header timeline-col-2">Duration</div>
+        <div class="timeline-header timeline-col-2 sortColumnAsc">Start<span>Start date</span></div>
+        <div class="timeline-header timeline-col-2">End<span>End date</span></div>
+        <div class="timeline-header timeline-col-14">Timeline</div>
+      </div>
+    </div>
+    <div class="timeline-body">
+      <div class="timeline-row" ng-repeat="exec in execs">
+        <div class="timeline-cell timeline-col-4">{{ exec.name }}<span>{{ exec.type }}</span></div>
+        <div class="timeline-cell timeline-col-2">{{ exec.responseTime() | gatlingTimestamp }}</div>
+        <div class="timeline-cell timeline-col-2">
+          {{ exec.startDeltaTime() | gatlingTimestamp }}
+          <span>{{ exec.requestStartDate | gatlingDate }}</span>
+        </div>
+        <div class="timeline-cell timeline-col-2">
+          {{ exec.endDeltaTime() | gatlingTimestamp }}
+          <span>{{ exec.responseEndDate | gatlingDate }}</span>
+        </div>
+        <div class="timeline-cell timeline-col-14 timeline-exec">
+          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.size() + 'px'}"></div>
+          <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Dependencies -->

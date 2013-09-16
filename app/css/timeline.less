@@ -1,30 +1,73 @@
 @import 'mixins.less';
 
-#timeline {
+.timeline {
+  border-collapse: collapse;
+  display: table;
   table-layout: fixed;
+}
 
-  thead,
-  tbody {
-    tr {
-      &> th,
-      &> td {
+.timeline-head {
+  display: table-header-group;
+}
+
+.timeline-body {
+  display: table-row-group;
+}
+
+.timeline-row {
+  display: table-row;
+}
+
+.timeline-header,
+.timeline-cell {
+  display: table-cell;
+  padding: 5px;
+}
+
+.timeline {
+  .timeline-head {
+    .timeline-header {
+      border-bottom: 2px solid #ddd;
+    }
+  }
+
+  .timeline-head,
+  .timeline-body {
+    .timeline-row {
+      &> .timeline-header,
+      &> .timeline-cell {
         border-left: 1px solid #ddd;
         vertical-align: top;
       }
 
-      &> th:first-child,
-      &> td:first-child {
+      &> .timeline-header:first-child,
+      &> .timeline-cell:first-child {
         border-left: none;
+      }
+
+      &> .timeline-cell {
+        border-top: 1px solid #ddd;
       }
     }
   }
 }
 
-#timeline {
-  thead,
-  tbody {
-    tr {
-      td, th {
+.timeline {
+  .timeline-header {
+    font-weight: bold;
+  }
+
+  .timeline-body {
+    .timeline-row:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .timeline-head,
+  .timeline-body {
+    .timeline-row {
+      .timeline-header,
+      .timeline-cell {
         span {
           color: #aaa;
           display: block;
@@ -36,8 +79,8 @@
 
   }
 
-  tbody tr {
-    td {
+  .timeline-body .timeline-row {
+    .timeline-cell {
       span {
         display: none;
       }
@@ -52,9 +95,7 @@
 }
 
 .timeline-col-2,
-.timeline-col-3,
 .timeline-col-4,
-.timeline-col-12,
 .timeline-col-14 {
   .timeline-col-gutter();
 }
@@ -63,16 +104,8 @@
   .timeline-col-width(2);
 }
 
-.timeline-col-3 {
-  .timeline-col-width(3);
-}
-
 .timeline-col-4 {
   .timeline-col-width(4);
-}
-
-.timeline-col-12 {
-  .timeline-col-width(12);
 }
 
 .timeline-col-14 {

@@ -24,7 +24,9 @@
 }
 
 .timeline-col-width(@num) {
-  width: ((@base + @gutter * 2) * @num);
+  @col-width: ((@base + @gutter * 2)* @num);
+  width: @col-width;
+  max-width: @col-width; // with `table-layout: fixed;`
 }
 
 .exec-styles(@btn-color: #555) {
