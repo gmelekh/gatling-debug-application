@@ -13,19 +13,19 @@ gatling.factory('Exec', function ($rootScope) {
       },
 
       startDeltaTime: function () {
-        return this.requestStartDate - $rootScope.simulationStart;
+        return $rootScope.state.delta(this.requestStartDate);
       },
 
       endDeltaTime: function () {
-        return this.responseEndDate - $rootScope.simulationStart;
+        return $rootScope.state.delta(this.responseEndDate);
       },
 
       position: function () {
-        return (this.requestStartDate - $rootScope.position) * $rootScope.ratio;
+        return $rootScope.state.positionOf(this.requestStartDate);
       },
 
       width: function () {
-        return this.responseTime() * $rootScope.ratio;
+        return $rootScope.state.widthOf(this.responseTime());
       }
     });
   };

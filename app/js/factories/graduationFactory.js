@@ -9,14 +9,13 @@ gatling.factory('Graduation', function ($rootScope) {
     return angular.extend(graduation, {
 
       position: function () {
-        var shift = $rootScope.simulationStart - $rootScope.position;
-
-        return (this.millis + shift) * $rootScope.ratio + 5;
+        return $rootScope.state.positionOfGraduation(this.millis);
       },
 
       value: function () {
         var value = this.millis % 1000;
-        if (value % 1000 === 0) {
+        if (this.millis !== 0 && value % 1000 === 0) {
+
           return this.millis / 1000 + ' s';
         }
 
