@@ -6,7 +6,8 @@
   table-layout: fixed;
 }
 
-.timeline-head {
+.timeline-head,
+.timeline-ruler-head {
   display: table-header-group;
 }
 
@@ -14,8 +15,7 @@
   display: table-row-group;
 }
 
-.timeline-row,
-.timeline-ruler-row {
+.timeline-row {
   display: table-row;
 }
 
@@ -30,6 +30,15 @@
     .timeline-header {
       border-bottom: 2px solid @light-color;
       height: 3em;
+    }
+  }
+
+  .timeline-ruler-head {
+    .timeline-row {
+      .timeline-cell {
+        border-bottom: 2px dashed @light-color;
+        height: 1.5em;
+      }
     }
   }
 
@@ -52,15 +61,6 @@
       }
     }
   }
-
-  .timeline-body {
-    .timeline-row:first-child {
-      .timeline-cell {
-        border-bottom: 2px dashed @light-color;
-        height: 1.5em;
-      }
-    }
-  }
 }
 
 .timeline {
@@ -69,7 +69,7 @@
   }
 
   .timeline-body {
-    .timeline-row:nth-child(even) {
+    .timeline-row:nth-child(odd) {
       background-color: @highlight-color;
     }
   }
