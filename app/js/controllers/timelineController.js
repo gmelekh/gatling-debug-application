@@ -4,7 +4,10 @@
 
 gatling.controller('timelineController', function ($rootScope, $scope, Exec) {
 
-  $scope.execs = gatling.makeManagedArray(debugData, Exec);
+  $scope.execs = [];
+  angular.forEach(debugData, function (exec) {
+    this.push(new Exec(exec));
+  }, $scope.execs);
 
   $rootScope.simulationStart = debugData[0].requestStartDate;
   $rootScope.position = $rootScope.simulationStart;
