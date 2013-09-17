@@ -9,11 +9,18 @@
         overflow: hidden;
         white-space: nowrap;
 
+        &> div,
+        &> span {
+          position: relative;
+        }
+
         &> div {
-          .exec-borders();
+          .exec-borders;
           .exec-styles(@btn-success-bg);
+
           display: inline-block;
           height: 10px;
+          z-index: 100;
 
           &+ span {
             display: inline-block;

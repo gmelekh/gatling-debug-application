@@ -19,12 +19,24 @@
   .grid('../images/24_col.gif');
 }
 
+.reduce-font() {
+  font-size: 90%;
+  font-weight: normal;
+}
+
+.stretch() {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
 .timeline-col-gutter() {
   padding: @gutter;
 }
 
 .timeline-col-width(@num) {
-  @col-width: ((@base + @gutter * 2)* @num);
+  @col-width: (@base-col-width + @gutter * 2) * @num;
   width: @col-width;
   max-width: @col-width; // with `table-layout: fixed;`
 }

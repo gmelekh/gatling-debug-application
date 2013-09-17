@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../app/css/timeline.css">
   <link rel="stylesheet" href="../app/css/timeline-sort.css">
   <link rel="stylesheet" href="../app/css/timeline-exec.css">
+  <link rel="stylesheet" href="../app/css/timeline-ruler.css">
 </head>
 <body>
 
@@ -47,7 +48,7 @@
         <div class="timeline-header timeline-col-2">Duration</div>
         <div class="timeline-header timeline-col-2 sortColumnAsc">Start<span>Start date</span></div>
         <div class="timeline-header timeline-col-2">End<span>End date</span></div>
-        <div class="timeline-header timeline-col-14">Timeline</div>
+        <div class="timeline-header timeline-col-14">Timeline<span>Milliseconds</span></div>
       </div>
     </div>
     <div class="timeline-body">
@@ -65,6 +66,13 @@
         <div class="timeline-cell timeline-col-14 timeline-exec">
           <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.size() + 'px'}"></div>
           <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-ruler" ng-controller="rulerController">
+      <div class="timeline-col-14">
+        <div class="timeline-graduation" ng-class="{'timeline-graduation-mark': graduation.isThousand()}"
+             ng-style="{'left': graduation.position() + 'px'}" ng-repeat="graduation in graduations">{{ graduation.value() }}
         </div>
       </div>
     </div>
@@ -88,10 +96,12 @@
 <script type="text/javascript" src="../app/js/filters/timestamp.js"></script>
 <!-- Factories -->
 <script type="text/javascript" src="../app/js/factories/exec.js"></script>
+<script type="text/javascript" src="../app/js/factories/graduation.js"></script>
 <!-- Controllers -->
 <script type="text/javascript" src="../app/js/controllers/position.js"></script>
 <script type="text/javascript" src="../app/js/controllers/ratio.js"></script>
 <script type="text/javascript" src="../app/js/controllers/timeline.js"></script>
+<script type="text/javascript" src="../app/js/controllers/ruler.js"></script>
 
 </body>
 </html>
