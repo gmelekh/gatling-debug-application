@@ -52,6 +52,13 @@
       </div>
     </div>
     <div class="timeline-body">
+      <div class="timeline-row">
+        <div class="timeline-cell timeline-col-4"></div>
+        <div class="timeline-cell timeline-col-2"></div>
+        <div class="timeline-cell timeline-col-2"></div>
+        <div class="timeline-cell timeline-col-2"></div>
+        <div class="timeline-cell timeline-col-14"></div>
+      </div>
       <div class="timeline-row" ng-repeat="exec in execs">
         <div class="timeline-cell timeline-col-4">{{ exec.name }}<span>{{ exec.type }}</span></div>
         <div class="timeline-cell timeline-col-2">{{ exec.responseTime() | gatlingTimestamp }}</div>
@@ -72,7 +79,8 @@
     <div class="timeline-ruler" ng-controller="rulerController">
       <div class="timeline-col-14">
         <div class="timeline-graduation" ng-class="{'timeline-graduation-mark': graduation.isThousand()}"
-             ng-style="{'left': graduation.position() + 'px'}" ng-repeat="graduation in graduations">{{ graduation.value() }}
+             ng-style="{'left': graduation.position() + 'px'}" ng-repeat="graduation in graduations">{{
+          graduation.value() }}
         </div>
       </div>
     </div>

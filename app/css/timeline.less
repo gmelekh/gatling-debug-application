@@ -14,7 +14,8 @@
   display: table-row-group;
 }
 
-.timeline-row {
+.timeline-row,
+.timeline-ruler-row {
   display: table-row;
 }
 
@@ -28,7 +29,7 @@
   .timeline-head {
     .timeline-header {
       border-bottom: 2px solid @light-color;
-      height: 4.5em;
+      height: 3em;
     }
   }
 
@@ -51,6 +52,15 @@
       }
     }
   }
+
+  .timeline-body {
+    .timeline-row:first-child {
+      .timeline-cell {
+        border-bottom: 2px dashed @light-color;
+        height: 1.5em;
+      }
+    }
+  }
 }
 
 .timeline {
@@ -59,7 +69,7 @@
   }
 
   .timeline-body {
-    .timeline-row:nth-child(odd) {
+    .timeline-row:nth-child(even) {
       background-color: @highlight-color;
     }
   }
