@@ -64,7 +64,7 @@
           <span>{{ exec.responseEndDate | gatlingDate }}</span>
         </div>
         <div class="timeline-cell timeline-col-14 timeline-exec">
-          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.size() + 'px'}"></div>
+          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div>
           <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
         </div>
       </div>

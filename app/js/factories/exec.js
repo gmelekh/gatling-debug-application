@@ -24,7 +24,7 @@ gatling.factory('Exec', function ($rootScope) {
         return (this.requestStartDate - $rootScope.position) * $rootScope.ratio;
       },
 
-      size: function () {
+      width: function () {
         return this.responseTime() * $rootScope.ratio;
       }
     });
