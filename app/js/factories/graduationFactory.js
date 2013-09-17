@@ -11,7 +11,7 @@ gatling.factory('Graduation', function ($rootScope) {
       position: function () {
         var shift = $rootScope.simulationStart - $rootScope.position;
 
-        return (this.millis + shift) * $rootScope.ratio;
+        return (this.millis + shift) * $rootScope.ratio + 5;
       },
 
       value: function () {
