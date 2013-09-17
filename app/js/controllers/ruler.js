@@ -11,8 +11,5 @@ gatling.controller('rulerController', function ($rootScope, $scope, Graduation) 
     });
   }
 
-  $scope.graduations = [];
-  angular.forEach(graduations, function (graduation) {
-    $scope.graduations.push(new Graduation(graduation));
-  });
+  $scope.graduations = gatling.makeManagedArray(graduations, Graduation);
 });
