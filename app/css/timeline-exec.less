@@ -10,8 +10,8 @@
         white-space: nowrap;
 
         &> div,
-        &> span {
-          position: relative;
+        &> div + span {
+          position: relative; // so z-index can work
         }
 
         &> div {
@@ -24,7 +24,7 @@
 
           &+ span {
             display: inline-block;
-            margin-left: 10px;
+            padding: 0 10px; // Cheating with angular
             vertical-align: top;
           }
 

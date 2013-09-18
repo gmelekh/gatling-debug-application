@@ -65,16 +65,16 @@
         <div class="timeline-cell timeline-col-4">{{ exec.name }}<span>{{ exec.type }}</span></div>
         <div class="timeline-cell timeline-col-2">{{ exec.responseTime() | gatlingTimestamp }}</div>
         <div class="timeline-cell timeline-col-2">
-          {{ exec.startDeltaTime() | gatlingTimestamp }}
-          <span>{{ exec.requestStartDate | gatlingDate }}</span>
+          {{ exec.startDeltaTime() | gatlingTimestamp }}<!--
+          --><span>{{ exec.requestStartDate | gatlingDate }}</span>
         </div>
         <div class="timeline-cell timeline-col-2">
-          {{ exec.endDeltaTime() | gatlingTimestamp }}
-          <span>{{ exec.responseEndDate | gatlingDate }}</span>
+          {{ exec.endDeltaTime() | gatlingTimestamp }}<!--
+          --><span>{{ exec.responseEndDate | gatlingDate }}</span>
         </div>
         <div class="timeline-cell timeline-col-14 timeline-exec">
-          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div>
-          <span>{{ exec.responseTime() | gatlingTimestamp }}</span>
+          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div><!--
+          --><span class="overflowed" timestamp>{{ exec.responseTime() | gatlingTimestamp }}</span>
         </div>
       </div>
     </div>
@@ -113,6 +113,8 @@
 <script type="text/javascript" src="../app/js/controllers/ratioController.js"></script>
 <script type="text/javascript" src="../app/js/controllers/timelineController.js"></script>
 <script type="text/javascript" src="../app/js/controllers/rulerController.js"></script>
+<!-- Directives -->
+<script type="text/javascript" src="../app/js/directives/timestampDirective.js"></script>
 
 </body>
 </html>
