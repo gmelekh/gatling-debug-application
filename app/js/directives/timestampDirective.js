@@ -2,14 +2,14 @@
 
 'use strict';
 
-gatling.directive('timestamp', function ($rootScope, $timeout) {
+gatling.directive('timestamp', function ($rootScope) {
 
   return {
     restrict: 'A',
     scope: true,
     link: function (scope, element) {
 
-      function baywatch(exec) {
+      function stateWatch(exec) {
 
         return function () {
           var position = exec.position(),
@@ -23,8 +23,8 @@ gatling.directive('timestamp', function ($rootScope, $timeout) {
         };
       }
 
-      $rootScope.$watch('state.position', baywatch(scope.exec));
-      $rootScope.$watch('state.ratio', baywatch(scope.exec));
+      $rootScope.$watch('state.position', stateWatch(scope.exec));
+      $rootScope.$watch('state.ratio', stateWatch(scope.exec));
     }
   };
 });

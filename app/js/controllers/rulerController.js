@@ -22,7 +22,7 @@ gatling.controller('rulerController', function ($rootScope, $scope, Graduation) 
     });
   }
 
-  function stateWatcher() {
+  function stateWatch() {
     $scope.graduations = [];
     for (var i = base(); i < limit(); i++) {
       $scope.graduations.push(graduation(i));
@@ -31,6 +31,6 @@ gatling.controller('rulerController', function ($rootScope, $scope, Graduation) 
 
   // There must be two of them:
   // `state.position || state.ratio` won't work
-  $rootScope.$watch('state.position', stateWatcher);
-  $rootScope.$watch('state.ratio', stateWatcher);
+  $rootScope.$watch('state.position', stateWatch);
+  $rootScope.$watch('state.ratio', stateWatch);
 });
