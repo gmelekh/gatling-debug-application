@@ -5,14 +5,14 @@
 gatling.controller('ratioController', function ($rootScope, $scope) {
 
   $scope.increase = function () {
-    $rootScope.timeline.state.ratio += 0.1;
+    $rootScope.state.ratio += 0.1;
   };
 
   $scope.decrease = function () {
-    $rootScope.timeline.state.ratio -= 0.1;
+    $rootScope.state.ratio -= 0.1;
   };
 
   $scope.reset = function () {
-    $rootScope.timeline.state.ratio = $rootScope.timeline.baseRatio;
+    $rootScope.state.ratio = $rootScope.defaults.baseRatio;
   };
 });

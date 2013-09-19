@@ -8,26 +8,28 @@ gatling.factory('State', function ($rootScope) {
 
     return angular.extend(state, {
 
-      base: function () {
-        return Math.floor((this.axis - $rootScope.simulation.start) / 100);
+      axisStart: function () {
+        // TODO don't divide by 100 to times ?
+        return Math.floor((this.currentDate - this.defaults.startDate) / 100);
       },
 
-      limit: function () {
-        return Math.floor($rootScope.timeline.realWidth / 100 / this.ratio + this.base());
+      axisEnd: function () {
+        // Same here
+        return Math.floor(this.defaults.realWidth / 100 / this.ratio + this.axisStart());
       },
 
       delta: function (timestamp) {
-        return timestamp - $rootScope.simulation.start;
+        return timestamp - $rootScope.defaults.startDate;
       },
 
       positionOf: function (timestamp) {
-        return (timestamp - this.axis) * this.ratio;
+        return (timestamp - this.currentDate) * this.ratio;
       },
 
       positionOfGraduation: function (timestamp) {
-        var shift = $rootScope.simulation.start - this.axis;
+        var shift = $rootScope.defaults.startDate - this.currentDate;
 
-        return (timestamp + shift) * this.ratio + 5;
+        return (timestamp + shift) * this.ratio + 5; // TODO plus 5 padding...
       },
 
       widthOf: function (duration) {

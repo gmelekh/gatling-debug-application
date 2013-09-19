@@ -9,7 +9,7 @@ gatling.factory('Graduation', function ($rootScope) {
     return angular.extend(graduation, {
 
       position: function () {
-        return $rootScope.timeline.state.positionOfGraduation(this.millis);
+        return $rootScope.state.positionOfGraduation(this.millis);
       },
 
       value: function () {

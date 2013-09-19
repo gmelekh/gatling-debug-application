@@ -15,16 +15,16 @@ gatling.controller('rulerController', function ($rootScope, $scope, Graduation) 
   }
 
   function stateWatch() {
-    var state = $rootScope.timeline.state;
+    var state = $rootScope.state;
 
     $scope.graduations = [];
-    for (var index = state.base(); index < state.limit(); index++) {
+    for (var index = state.axisStart(); index < state.axisEnd(); index++) {
       $scope.graduations.push(createGraduation(index));
     }
   }
 
   // There must be two of them:
   // `state.position || state.ratio` won't work
-  $rootScope.$watch('timeline.state.axis', stateWatch);
-  $rootScope.$watch('timeline.state.ratio', stateWatch);
+  $rootScope.$watch('state.currentDate', stateWatch);
+  $rootScope.$watch('state.ratio', stateWatch);
 });

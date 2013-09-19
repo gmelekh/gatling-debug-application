@@ -5,14 +5,14 @@
 gatling.controller('positionController', function ($rootScope, $scope) {
 
   $scope.increase = function () {
-    $rootScope.timeline.state.axis += 50;
+    $rootScope.state.currentDate += 50;
   };
 
   $scope.decrease = function () {
-    $rootScope.timeline.state.axis -= 50;
+    $rootScope.state.currentDate -= 50;
   };
 
   $scope.reset = function () {
-    $rootScope.timeline.state.axis = $rootScope.simulation.start;
+    $rootScope.state.currentDate = $rootScope.defaults.startDate;
   };
 });
