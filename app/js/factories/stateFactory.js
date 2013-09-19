@@ -2,30 +2,30 @@
 
 'use strict';
 
-gatling.factory('State', function () {
+gatling.factory('State', function ($rootScope) {
 
   return function (state) {
 
     return angular.extend(state, {
 
       base: function () {
-        return Math.floor((this.position - this.simulationStart) / 100);
+        return Math.floor((this.axis - $rootScope.simulation.start) / 100);
       },
 
       limit: function () {
-        return Math.floor(5.49 / this.ratio + this.base());
+        return Math.floor($rootScope.timeline.realWidth / 100 / this.ratio + this.base());
       },
 
       delta: function (timestamp) {
-        return timestamp - this.simulationStart;
+        return timestamp - $rootScope.simulation.start;
       },
 
       positionOf: function (timestamp) {
-        return (timestamp - this.position) * this.ratio;
+        return (timestamp - this.axis) * this.ratio;
       },
 
       positionOfGraduation: function (timestamp) {
-        var shift = this.simulationStart - this.position;
+        var shift = $rootScope.simulation.start - this.axis;
 
         return (timestamp + shift) * this.ratio + 5;
       },
