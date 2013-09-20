@@ -1,8 +1,9 @@
 # ides
 .idea
 
-# lessc
-*.css
-
 # node
+npm-debug.log
+node_modules
+
+# bower
 bower_components

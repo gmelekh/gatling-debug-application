@@ -11,11 +11,7 @@
 
   <!-- Application -->
 
-  <link rel="stylesheet" href="../app/css/main.css">
-  <link rel="stylesheet" href="../app/css/timeline.css">
-  <link rel="stylesheet" href="../app/css/timeline-sort.css">
-  <link rel="stylesheet" href="../app/css/timeline-exec.css">
-  <link rel="stylesheet" href="../app/css/timeline-ruler.css">
+  <link rel="stylesheet" href="../dist/css/gatling-debug.min.css">
 </head>
 <body>
 
@@ -73,9 +69,8 @@
           --><span>{{ exec.responseEndDate | gatlingDate }}</span>
         </div>
         <div class="timeline-cell timeline-col-14 timeline-exec">
-          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div>
-          <!--
-                    --><span class="overflowed" timestamp>{{ exec.responseTime() | gatlingTimestamp }}</span>
+          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div><!--
+          --><span class="overflowed" timestamp>{{ exec.responseTime() | gatlingTimestamp }}</span>
         </div>
       </div>
     </div>
@@ -98,24 +93,8 @@
 
 <!-- Application -->
 
-<!-- Data -->
-<script type="text/javascript" src="../app/data/debug-data.js"></script>
-<!-- Bootstrapping -->
-<script type="text/javascript" src="../app/js/bootstrap.js"></script>
-<!-- Filters -->
-<script type="text/javascript" src="../app/js/filters/dateFilter.js"></script>
-<script type="text/javascript" src="../app/js/filters/timestampFilter.js"></script>
-<!-- Factories -->
-<script type="text/javascript" src="../app/js/factories/stateFactory.js"></script>
-<script type="text/javascript" src="../app/js/factories/execFactory.js"></script>
-<script type="text/javascript" src="../app/js/factories/graduationFactory.js"></script>
-<!-- Controllers -->
-<script type="text/javascript" src="../app/js/controllers/positionController.js"></script>
-<script type="text/javascript" src="../app/js/controllers/ratioController.js"></script>
-<script type="text/javascript" src="../app/js/controllers/timelineController.js"></script>
-<script type="text/javascript" src="../app/js/controllers/rulerController.js"></script>
-<!-- Directives -->
-<script type="text/javascript" src="../app/js/directives/timestampDirective.js"></script>
+<script type="text/javascript" src="../dist/data/gatling-debug-data.js"></script>
+<script type="text/javascript" src="../dist/js/gatling-debug.min.js"></script>
 
 </body>
 </html>
