@@ -4,13 +4,28 @@ A tool to help scenario debugging, in a **visual** and **easy** way.
 
 This is [Gatling Debug](https://github.com/notdryft/gatling-debug)'s Front end.
 
-## Compile & Install
+## Install modules
 
 Just do the following:
 ```bash
-$ npm install -g bower
+$ npm install -g grunt bower
 [... gatling-debug-application ]$ bower install
+[... gatling-debug-application ]$ npm install
 ```
+
+## Build
+
+Default build chain:
+```bash
+[... gatling-debug-application ]$ grunt
+```
+
+Available tasks are:
+* `clean[:src]`
+* `jshint[:all]`
+* `concat[:all]`
+* `uglify[:all]`
+* `less[:development, :production]`
 
 ## Testing
 
