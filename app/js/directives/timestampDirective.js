@@ -24,8 +24,8 @@ gatling.directive('timestamp', function ($rootScope) {
         };
       }
 
-      $rootScope.$watch('timeline.state.currentDate', stateWatch(scope.exec));
-      $rootScope.$watch('timeline.state.ratio', stateWatch(scope.exec));
+      $rootScope.$watch('state.currentDate', stateWatch(scope.exec));
+      $rootScope.$watch('state.ratio', stateWatch(scope.exec));
     }
   };
 });
