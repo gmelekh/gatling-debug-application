@@ -7,3 +7,7 @@ node_modules
 
 # bower
 bower_components
+
+# dist
+dist/css
+dist/js
