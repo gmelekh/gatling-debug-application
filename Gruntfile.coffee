@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = (grunt) ->
 
   # Project configuration
@@ -60,6 +58,7 @@ module.exports = (grunt) ->
           'dist/css/gatling-debug.min.css': 'app/less/**/*.less'
 
   # Tasks
+
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-jshint')
   grunt.loadNpmTasks('grunt-contrib-concat')
@@ -67,4 +66,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-less')
 
   # Default task
+
   grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less'])
