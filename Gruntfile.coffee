@@ -33,10 +33,11 @@ module.exports = (grunt) ->
       options:
         mangle:
           except: [
+            '$element'
+            '$filter'
             '$rootScope'
             '$scope'
-            '$filter'
-            '$element'
+            '$timeout'
             'Exec'
             'State'
             'Graduation'

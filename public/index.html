@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../dist/css/gatling-debug.min.css">
 </head>
-<body>
+<body draggable>
 
 <div class="container">
 
@@ -69,8 +69,9 @@
           --><span>{{ exec.responseEndDate | gatlingDate }}</span>
         </div>
         <div class="timeline-cell timeline-col-14 timeline-exec">
-          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div><!--
-          --><span class="overflowed" timestamp>{{ exec.responseTime() | gatlingTimestamp }}</span>
+          <div ng-style="{'margin-left': exec.position() + 'px', 'width': exec.width() + 'px'}"></div>
+          <!--
+                    --><span class="overflowed" timestamp>{{ exec.responseTime() | gatlingTimestamp }}</span>
         </div>
       </div>
     </div>
@@ -94,7 +95,7 @@
 <!-- Application -->
 
 <script type="text/javascript" src="../dist/data/gatling-debug-data.js"></script>
-<script type="text/javascript" src="../dist/js/gatling-debug.min.js"></script>
+<script type="text/javascript" src="../dist/js/gatling-debug.js"></script>
 
 </body>
 </html>
