@@ -35,3 +35,12 @@ You can start [Karma](http://karma-runner.github.io/)'s file watch this way:
 $ npm install -g karma jasmine-node
 [... gatling-debug-application ]$ karma start
 ```
+
+## Launching
+
+You can start a server by the following grunt task:
+```bash
+$ [... gatling-debug-application ]$ grunt server
+```
+
+This will execute all the build tasks, then start a server on port `3000`.
