@@ -76,3 +76,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less'])
   grunt.registerTask('server', ['default', 'connect'])
+
+  return
