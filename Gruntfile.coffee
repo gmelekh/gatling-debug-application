@@ -3,7 +3,7 @@ module.exports = (grunt) ->
   # Project configuration
   grunt.initConfig
 
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON 'package.json'
 
     clean:
       src: ['dist/css', 'dist/js']
@@ -57,14 +57,22 @@ module.exports = (grunt) ->
         files:
           'dist/css/gatling-debug.min.css': 'app/less/**/*.less'
 
+    connect:
+      server:
+        options:
+          port: 3000
+          keepalive: true
+
   # Tasks
 
-  grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-contrib-jshint')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.loadNpmTasks('grunt-contrib-less')
+  grunt.loadNpmTasks 'grunt-contrib-clean'
+  grunt.loadNpmTasks 'grunt-contrib-jshint'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
 
   # Default task
 
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less'])
+  grunt.registerTask 'default', ['clean', 'jshint', 'concat', 'uglify', 'less']
+  grunt.registerTask 'server', ['default', 'connect']
