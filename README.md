@@ -8,7 +8,7 @@ This is [Gatling Debug](https://github.com/notdryft/gatling-debug)'s Front end.
 
 Just do the following:
 ```bash
-$ npm install -g grunt bower
+$ npm install -g grunt grunt-cli bower
 [... gatling-debug-application ]$ bower install
 [... gatling-debug-application ]$ npm install
 ```
