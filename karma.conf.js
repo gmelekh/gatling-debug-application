@@ -14,7 +14,7 @@ module.exports = function (config) {
       'bower_components/bootstrap/dist/js/bootstrap.min.js',
       'bower_components/angular/angular.min.js',
       // simulation data
-      'app/data/debug-data.js',
+      'dist/data/gatling-debug-data.js',
       // application bootstrap
       'app/js/bootstrap.js',
       // javascripts
@@ -22,7 +22,7 @@ module.exports = function (config) {
       'app/js/factories/*.js',
       'app/js/controllers/*.js',
       // html
-      'public/index.html',
+      'public/index.tpl',
       // tests
       'test/**/*.spec.js'
     ],

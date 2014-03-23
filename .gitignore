@@ -9,5 +9,6 @@ node_modules
 bower_components
 
 # dist
+dist/index.html
 dist/css
 dist/js

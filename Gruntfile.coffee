@@ -6,7 +6,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
 
     clean:
-      src: ['dist/css', 'dist/js']
+      src: ['dist/index.html', 'dist/css', 'dist/js']
 
     jshint:
       all: ['Gruntfile.js', 'app/js/**/*.js', 'test/**/*.js']
@@ -57,6 +57,11 @@ module.exports = (grunt) ->
         files:
           'dist/css/gatling-debug.min.css': 'app/less/**/*.less'
 
+    preprocess:
+      index:
+        src: 'public/index.html.tpl'
+        dest: 'dist/index.html'
+
     connect:
       server:
         options:
@@ -70,10 +75,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-less')
+  grunt.loadNpmTasks('grunt-preprocess')
   grunt.loadNpmTasks('grunt-contrib-connect')
 
   # Default task
 
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less'])
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less', 'preprocess:index'])
 
   return
