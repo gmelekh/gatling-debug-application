@@ -6,7 +6,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
 
     clean:
-      src: ['dist/index.html', 'dist/css', 'dist/js']
+      src: ['index.html', 'dist/css', 'dist/js']
 
     jshint:
       all: ['Gruntfile.js', 'app/js/**/*.js', 'test/**/*.js']
@@ -60,7 +60,7 @@ module.exports = (grunt) ->
     preprocess:
       index:
         src: 'public/index.html.tpl'
-        dest: 'dist/index.html'
+        dest: 'index.html'
 
     connect:
       server:
