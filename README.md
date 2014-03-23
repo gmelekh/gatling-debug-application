@@ -40,7 +40,7 @@ $ npm install -g karma jasmine-node
 
 You can start a server by the following grunt task:
 ```bash
-$ [... gatling-debug-application ]$ grunt server
+[... gatling-debug-application ]$ grunt connect
 ```
 
 This will execute all the build tasks, then start a server on port `3000`.
