@@ -6,10 +6,25 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON('package.json')
 
     clean:
-      src: ['index.html', 'dist/css', 'dist/js']
+      all:
+        src: [
+          'dist/index.html'
+          'dist/assets/css'
+          'dist/assets/js'
+          'dist/vendor'
+        ]
+      package:
+        src: [
+          '*.tar.gz'
+          'build'
+        ]
 
     jshint:
-      all: ['Gruntfile.js', 'app/js/**/*.js', 'test/**/*.js']
+      all: [
+        'Gruntfile.js'
+        'app/assets/js/**/*.js'
+        'test/**/*.js'
+      ]
       options:
         globalstrict: true
 
@@ -19,13 +34,13 @@ module.exports = (grunt) ->
           '// Source: ' + path + '\n' + src.replace(/\/\* .* \*\/\n*'use strict';\n/g, '')
       all:
         src: [
-          'app/js/bootstrap.js'
-          'app/js/filters/*.js'
-          'app/js/factories/*.js'
-          'app/js/directives/*.js'
-          'app/js/controllers/*.js'
+          'app/assets/js/bootstrap.js'
+          'app/assets/js/filters/*.js'
+          'app/assets/js/factories/*.js'
+          'app/assets/js/directives/*.js'
+          'app/assets/js/controllers/*.js'
         ]
-        dest: 'dist/js/gatling-debug.js'
+        dest: 'dist/assets/js/gatling-debug.js'
 
     uglify:
       options:
@@ -42,29 +57,54 @@ module.exports = (grunt) ->
           ]
       all:
         files:
-          'dist/js/gatling-debug.min.js': ['dist/js/gatling-debug.js']
+          'dist/assets/js/gatling-debug.min.js': ['dist/assets/js/gatling-debug.js']
 
     less:
       development:
         options:
-          paths: ['app/less/bootstrap', 'app/less']
+          paths: ['app/assets/less/bootstrap', 'app/assets/less']
         files:
-          'dist/css/gatling-debug.css': 'app/less/**/*.less'
+          'dist/assets/css/gatling-debug.css': 'app/assets/less/**/*.less'
       production:
         options:
-          paths: ['app/less/bootstrap', 'app/less']
+          paths: ['app/assets/less/bootstrap', 'app/assets/less']
           yuicompress: true
         files:
-          'dist/css/gatling-debug.min.css': 'app/less/**/*.less'
+          'dist/assets/css/gatling-debug.min.css': 'app/assets/less/**/*.less'
 
     preprocess:
       index:
-        src: 'public/index.html.tpl'
-        dest: 'index.html'
+        src: 'app/views/index.html'
+        dest: 'dist/index.html'
+
+    copy:
+      css:
+        expand: true
+        flatten: true
+        src: 'bower_components/**/*.min.css'
+        dest: 'dist/vendor/css/'
+      js:
+        expand: true
+        flatten: true
+        src: ['bower_components/**/*.min.js', '!**/sizzle.min.js']
+        dest: 'dist/vendor/js/'
+      map:
+        cwd: 'bower_components/'
+        expand: true
+        flatten: true
+        src: ['**/angular.min.js.map', '**/jquery.min.map']
+        dest: 'dist/vendor/js/'
+
+    shell:
+      package:
+        command: 'tar cvzf <%= pkg.name %>-<%= pkg.version %>.tar.gz dist && mkdir build && mv *.tar.gz build'
+        options:
+          stdout: true
 
     connect:
       server:
         options:
+          base: 'dist'
           port: 3000
           keepalive: true
 
@@ -76,10 +116,13 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-preprocess')
+  grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-shell')
   grunt.loadNpmTasks('grunt-contrib-connect')
 
   # Default task
 
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less', 'preprocess:index'])
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'less', 'preprocess:index', 'copy'])
+  grunt.registerTask('package', ['clean:package', 'shell:package'])
 
   return

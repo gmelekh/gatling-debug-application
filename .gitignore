@@ -8,7 +8,11 @@ node_modules
 # bower
 bower_components
 
+# build
+build
+
 # dist
-index.html
-dist/css
-dist/js
+dist/index.html
+dist/assets/css
+dist/assets/js
+dist/vendor
