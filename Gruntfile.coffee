@@ -43,18 +43,6 @@ module.exports = (grunt) ->
         dest: 'dist/assets/js/gatling-debug.js'
 
     uglify:
-      options:
-        mangle:
-          except: [
-            '$element'
-            '$filter'
-            '$rootScope'
-            '$scope'
-            '$timeout'
-            'Exec'
-            'State'
-            'Graduation'
-          ]
       all:
         files:
           'dist/assets/js/gatling-debug.min.js': ['dist/assets/js/gatling-debug.js']

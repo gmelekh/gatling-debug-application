@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.directive('draggable', function ($rootScope, $timeout) {
+gatling.directive('draggable', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
 
   return {
     restrict: 'A',
@@ -44,4 +44,4 @@ gatling.directive('draggable', function ($rootScope, $timeout) {
       });
     }
   };
-});
+}]);

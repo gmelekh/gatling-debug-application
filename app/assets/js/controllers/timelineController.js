@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.controller('timelineController', function ($rootScope, $scope, $element, State, Exec) {
+gatling.controller('timelineController', ['$rootScope', '$scope', '$element', 'State', 'Exec', function ($rootScope, $scope, $element, State, Exec) {
 
   var start = debugData[0].requestStartDate,
     end = debugData[debugData.length - 1].responseEndDate;
@@ -28,4 +28,4 @@ gatling.controller('timelineController', function ($rootScope, $scope, $element,
   angular.forEach(debugData, function (exec) {
     this.push(new Exec(exec));
   }, $scope.execs);
-});
+}]);

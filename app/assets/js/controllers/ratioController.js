@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.controller('ratioController', function ($rootScope, $scope) {
+gatling.controller('ratioController', ['$rootScope', '$scope', function ($rootScope, $scope) {
 
   $scope.increase = function () {
     $rootScope.state.ratio += 0.1;
@@ -15,4 +15,4 @@ gatling.controller('ratioController', function ($rootScope, $scope) {
   $scope.reset = function () {
     $rootScope.state.ratio = $rootScope.defaults.baseRatio;
   };
-});
+}]);

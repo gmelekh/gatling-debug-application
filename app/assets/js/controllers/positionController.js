@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.controller('positionController', function ($rootScope, $scope) {
+gatling.controller('positionController', ['$rootScope', '$scope', function ($rootScope, $scope) {
 
   $scope.increase = function () {
     $rootScope.state.currentDate += 50;
@@ -15,4 +15,4 @@ gatling.controller('positionController', function ($rootScope, $scope) {
   $scope.reset = function () {
     $rootScope.state.currentDate = $rootScope.defaults.startDate;
   };
-});
+}]);

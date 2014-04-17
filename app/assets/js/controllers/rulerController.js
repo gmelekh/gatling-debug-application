@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.controller('rulerController', function ($rootScope, $scope, Graduation) {
+gatling.controller('rulerController', ['$rootScope', '$scope', 'Graduation', function ($rootScope, $scope, Graduation) {
 
   function computeMillis(index) {
     return (index + 1) * 100;
@@ -27,4 +27,4 @@ gatling.controller('rulerController', function ($rootScope, $scope, Graduation) 
   // `state.position || state.ratio` won't work
   $rootScope.$watch('state.currentDate', stateWatch);
   $rootScope.$watch('state.ratio', stateWatch);
-});
+}]);

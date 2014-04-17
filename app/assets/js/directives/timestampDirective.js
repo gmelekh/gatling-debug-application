@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.directive('timestamp', function ($rootScope) {
+gatling.directive('timestamp', ['$rootScope', function ($rootScope) {
 
   return {
     restrict: 'A',
@@ -28,4 +28,4 @@ gatling.directive('timestamp', function ($rootScope) {
       $rootScope.$watch('state.ratio', stateWatch(scope.exec));
     }
   };
-});
+}]);

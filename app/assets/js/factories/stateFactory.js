@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.factory('State', function ($rootScope) {
+gatling.factory('State', ['$rootScope', function ($rootScope) {
 
   return function (state) {
 
@@ -38,4 +38,4 @@ gatling.factory('State', function ($rootScope) {
       }
     });
   };
-});
+}]);

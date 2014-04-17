@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.factory('Graduation', function ($rootScope) {
+gatling.factory('Graduation', ['$rootScope', function ($rootScope) {
 
   return function (graduation) {
 
@@ -27,4 +27,4 @@ gatling.factory('Graduation', function ($rootScope) {
       }
     });
   };
-});
+}]);

@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.factory('Exec', function ($rootScope) {
+gatling.factory('Exec', ['$rootScope', function ($rootScope) {
 
   return function (exec) {
 
@@ -29,4 +29,4 @@ gatling.factory('Exec', function ($rootScope) {
       }
     });
   };
-});
+}]);

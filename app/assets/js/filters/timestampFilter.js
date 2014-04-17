@@ -2,7 +2,7 @@
 
 'use strict';
 
-gatling.filter('gatlingTimestamp', function ($filter) {
+gatling.filter('gatlingTimestamp', ['$filter', function ($filter) {
 
   return function (timestamp) {
     var seconds = Math.floor(timestamp / 1000);
@@ -24,4 +24,4 @@ gatling.filter('gatlingTimestamp', function ($filter) {
 
     return $filter('date')(date, 'h:mm:ss.sss');
   };
-});
+}]);
