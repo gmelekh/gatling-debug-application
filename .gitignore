@@ -1,3 +1,6 @@
+# mac stuff
+.DS_Store
+
 # ides
 .idea
 
@@ -16,3 +19,4 @@ dist/index.html
 dist/assets/css
 dist/assets/js
 dist/vendor
+
